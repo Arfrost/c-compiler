@@ -19,4 +19,6 @@ typedef struct {
     char value[64];
 } Token;
 
+Token get_next_token(const char *src, int *pos);
+
 #endif
