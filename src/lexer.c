@@ -21,6 +21,7 @@ Token get_next_token(const char *src, int *pos){
     }
     
     buf[len] = '\0';
+
       
 if (strcmp(buf, "int") == 0) 
 {
@@ -41,6 +42,23 @@ return t;
     
         
     }
+
+    if (isdigit(src[*pos])) 
+    {
+    char buf[64];
+    int len = 0;
+    while (isdigit(src[*pos])) 
+    {
+        buf[len] = src[*pos];
+        len++;
+        (*pos)++;
+    }
+    buf[len] = '\0';
+    t.type = TOK_NUMBER;
+    strcpy(t.value, buf);
+    return t;
+}
+    
     switch (src[*pos])
     {
         case '(':
@@ -78,6 +96,9 @@ return t;
             t.value[0] = '\0';
             t.value[1] = '\0';
             break;
+        
+
+
 
 
     }

@@ -3,7 +3,7 @@
 
 int main ()
 {
-const char *src = "int main";
+const char *src = "123abc";
 int pos = 0;
 Token t;
 do {
